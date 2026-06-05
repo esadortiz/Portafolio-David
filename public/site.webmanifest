@@ -1,0 +1,16 @@
+{
+  "name": "David Ortiz",
+  "short_name": "David Ortiz",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "description": "Desarrollador web en Colombia. Páginas web modernas y profesionales para negocios.",
+  "icons": [
+    {
+      "src": "/Logo-public.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
