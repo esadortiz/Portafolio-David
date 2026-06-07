@@ -18,6 +18,9 @@ out/
 # Vercel
 .vercel/
 
+# OpenCode
+.opencode/
+
 # Cursor
 .cursor/
 .cursorignore
