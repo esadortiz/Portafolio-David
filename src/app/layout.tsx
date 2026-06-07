@@ -93,6 +93,7 @@ function JsonLd() {
     sameAs: [
       "https://github.com/esadortiz",
       "https://wa.me/573106289086",
+      "https://www.instagram.com/david_oh14/",
     ],
   };
 
@@ -110,6 +111,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <head>
+        <link rel="alternate" type="text/plain" href="/llms.txt" />
         <JsonLd />
       </head>
       <body

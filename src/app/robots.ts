@@ -8,6 +8,10 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/api/"],
       },
+      {
+        userAgent: ["GPTBot", "ChatGPT-User", "Google-Extended", "OAI-SearchBot"],
+        allow: "/",
+      },
     ],
     sitemap: "https://www.david-ortiz.dev/sitemap.xml",
   };

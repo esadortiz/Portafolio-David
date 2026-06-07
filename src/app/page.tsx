@@ -4,6 +4,7 @@ import { Trajectory } from "@/components/trajectory";
 import { Services } from "@/components/services";
 import { Projects } from "@/components/projects";
 import { Contact } from "@/components/contact";
+import { Faq } from "@/components/faq";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Services />
       <Projects />
       <Contact />
+      <Faq />
       <Footer />
     </>
   );
