@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 
 const WHATSAPP_URL =
   "https://wa.me/573106289086?text=Hola%20David%2C%20quiero%20informaci%C3%B3n%20para%20crear%20una%20p%C3%A1gina%20web%20para%20mi%20negocio.";
@@ -8,6 +9,8 @@ const WHATSAPP_URL =
 export function Header() {
   const [activeSection, setActiveSection] = useState("inicio");
   const [isDark, setIsDark] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -52,9 +55,22 @@ export function Header() {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (sectionId === "inicio") {
+      if (pathname === "/") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        router.push("/");
+      }
+      return;
+    }
+
+    if (pathname === "/") {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      router.push(`/#${sectionId}`);
     }
   };
 
