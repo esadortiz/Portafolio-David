@@ -44,9 +44,12 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   icons: {
-    icon: "/Logo-public.png",
-    shortcut: "/Logo-public.png",
-    apple: "/Logo-public.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
   },
   openGraph: {
     title: "David Ortiz | Páginas web profesionales para negocios",
