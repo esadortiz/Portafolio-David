@@ -54,8 +54,8 @@ export function LoadingScreen() {
 
         <div className="w-48 sm:w-56 h-[2px] bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
           <div
-            className="h-full bg-gray-900 dark:bg-white rounded-full transition-all duration-300 ease-out"
-            style={{ width: `${progress}%` }}
+            className="h-full bg-gray-900 dark:bg-white rounded-full transition-transform duration-300 ease-out origin-left"
+            style={{ transform: `scaleX(${progress / 100})` }}
           />
         </div>
 

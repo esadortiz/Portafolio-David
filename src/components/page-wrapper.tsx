@@ -10,23 +10,14 @@ interface PageWrapperProps {
 
 export function PageWrapper({ children }: PageWrapperProps) {
   const [isLoading, setIsLoading] = useState(true);
-  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    // Deshabilitar scroll durante la carga
     document.body.style.overflow = "hidden";
 
-    // Simular tiempo de carga
     const timer = setTimeout(() => {
       setIsLoading(false);
-      
-      // Permitir que la transición del loader se complete
-      setTimeout(() => {
-        setShowContent(true);
-        // Habilitar scroll después de que el contenido esté visible
-        document.body.style.overflow = "auto";
-      }, 500);
-    }, 2000); // 2 segundos de animación
+      document.body.style.overflow = "auto";
+    }, 2000);
 
     return () => {
       clearTimeout(timer);
@@ -38,13 +29,7 @@ export function PageWrapper({ children }: PageWrapperProps) {
     <>
       {isLoading && <LoadingScreen />}
       {!isLoading && <WhatsAppButton />}
-      <div
-        className={`transition-opacity duration-1000 ${
-          showContent ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        {children}
-      </div>
+      {children}
     </>
   );
 }
