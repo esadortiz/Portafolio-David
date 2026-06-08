@@ -59,12 +59,21 @@ export const metadata: Metadata = {
     siteName: "David Ortiz",
     locale: "es_CO",
     type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/icon.png`,
+        width: 512,
+        height: 512,
+        alt: "Portafolio de David Ortiz, desarrollador web para negocios",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "David Ortiz | Desarrollo de páginas web para negocios",
     description:
       "Creo páginas web modernas y profesionales para negocios, emprendedores y marcas personales.",
+    images: [`${SITE_URL}/icon.png`],
   },
 };
 
@@ -75,6 +84,8 @@ function JsonLd() {
     name: "David Ortiz",
     jobTitle: "Desarrollador Web",
     url: SITE_URL,
+    image: `${SITE_URL}/About.me.png`,
+    logo: `${SITE_URL}/icon.png`,
     email: "esauortiz014@gmail.com",
     telephone: "+573106289086",
     address: {

@@ -107,7 +107,7 @@ export default function About() {
           <div className="w-64 h-80 sm:w-72 sm:h-96 md:w-80 md:h-[28rem] lg:w-[30rem] lg:h-[40rem] overflow-hidden rounded-3xl shadow-2xl">
             <Image
               src="/About.me.png"
-              alt="Foto profesional de David Ortiz, desarrollador web en Colombia"
+              alt="David Ortiz, desarrollador web en Colombia"
               width={480}
               height={640}
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
