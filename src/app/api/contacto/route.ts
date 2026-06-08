@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
   const resend = new Resend(apiKey);
   try {
     const body = await request.json();
-    const { nombre, email, telefono, servicio, mensaje } = body;
+    const { nombre, email, telefono, servicio, mensaje, autorizacionDatos, comunicaciones } = body;
 
     if (!nombre || typeof nombre !== "string" || nombre.trim().length === 0) {
       return NextResponse.json(
@@ -71,6 +71,18 @@ export async function POST(request: NextRequest) {
          </tr>`
       : "";
 
+    const autorizacionRow = `
+                <tr>
+                  <td style="padding:10px 16px;font-weight:600;color:#374151;border-bottom:1px solid #e5e7eb;width:140px;">Autorización de datos</td>
+                  <td style="padding:10px 16px;color:#4b5563;border-bottom:1px solid #e5e7eb;">${autorizacionDatos ? "Sí" : "No"}</td>
+                </tr>`;
+
+    const comunicacionesRow = `
+                <tr>
+                  <td style="padding:10px 16px;font-weight:600;color:#374151;border-bottom:1px solid #e5e7eb;width:140px;">Comunicaciones comerciales</td>
+                  <td style="padding:10px 16px;color:#4b5563;border-bottom:1px solid #e5e7eb;">${comunicaciones ? "Sí" : "No"}</td>
+                </tr>`;
+
     const html = `
 <!DOCTYPE html>
 <html lang="es">
@@ -106,6 +118,8 @@ export async function POST(request: NextRequest) {
                   <td style="padding:10px 16px;font-weight:600;color:#374151;border-bottom:1px solid #e5e7eb;width:140px;">Mensaje</td>
                   <td style="padding:10px 16px;color:#4b5563;border-bottom:1px solid #e5e7eb;white-space:pre-wrap;">${mensaje}</td>
                 </tr>
+                ${autorizacionRow}
+                ${comunicacionesRow}
                 <tr>
                   <td style="padding:10px 16px;font-weight:600;color:#374151;width:140px;">Fecha</td>
                   <td style="padding:10px 16px;color:#4b5563;">${fecha}</td>

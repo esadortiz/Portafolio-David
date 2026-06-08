@@ -12,6 +12,9 @@ export function Contact() {
   const [servicio, setServicio] = useState("");
   const [mensaje, setMensaje] = useState("");
 
+  const [autorizacionDatos, setAutorizacionDatos] = useState(false);
+  const [comunicaciones, setComunicaciones] = useState(false);
+
   const [sending, setSending] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
@@ -37,6 +40,11 @@ export function Contact() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (!autorizacionDatos) {
+      setError("Debes autorizar el tratamiento de tus datos personales para enviar el mensaje.");
+      return;
+    }
+
     setSending(true);
     setSuccess(false);
     setError("");
@@ -51,6 +59,8 @@ export function Contact() {
           telefono: telefono.trim(),
           servicio: servicio.trim(),
           mensaje: mensaje.trim(),
+          autorizacionDatos: true,
+          comunicaciones,
         }),
       });
 
@@ -67,6 +77,8 @@ export function Contact() {
       setTelefono("");
       setServicio("");
       setMensaje("");
+      setAutorizacionDatos(false);
+      setComunicaciones(false);
     } catch {
       setError(
         "No pude enviar tu mensaje en este momento. También puedes escribirme por WhatsApp al 310 628 9086."
@@ -187,6 +199,49 @@ export function Contact() {
                   placeholder="Cuéntame sobre tu proyecto o negocio..."
                   className={`${inputBase} resize-none`}
                 />
+              </div>
+
+              <div className="space-y-3 pt-2">
+                <div className="flex items-start gap-3">
+                  <input
+                    id="autorizacion-datos"
+                    type="checkbox"
+                    checked={autorizacionDatos}
+                    onChange={(e) => setAutorizacionDatos(e.target.checked)}
+                    required
+                    className="mt-1 h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-black dark:text-white focus:ring-black dark:focus:ring-white cursor-pointer"
+                    aria-describedby="autorizacion-desc"
+                  />
+                  <label htmlFor="autorizacion-datos" className="text-sm text-gray-600 dark:text-gray-400 cursor-pointer leading-relaxed">
+                    Autorizo el tratamiento de mis datos personales de acuerdo con la{" "}
+                    <a
+                      href="/politica-de-privacidad"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-gray-900 dark:hover:text-white transition-colors"
+                    >
+                      Política de Privacidad
+                    </a>
+                    . *
+                  </label>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <input
+                    id="comunicaciones"
+                    type="checkbox"
+                    checked={comunicaciones}
+                    onChange={(e) => setComunicaciones(e.target.checked)}
+                    className="mt-1 h-4 w-4 rounded border-gray-300 dark:border-gray-600 text-black dark:text-white focus:ring-black dark:focus:ring-white cursor-pointer"
+                  />
+                  <label htmlFor="comunicaciones" className="text-sm text-gray-600 dark:text-gray-400 cursor-pointer leading-relaxed">
+                    Acepto recibir comunicaciones relacionadas con servicios, novedades o información comercial de David Ortiz.
+                  </label>
+                </div>
+
+                <p id="autorizacion-desc" className="text-xs text-gray-400 dark:text-gray-500 leading-relaxed">
+                  Al enviar este formulario, aceptas que David Ortiz use la información suministrada para responder tu solicitud. Puedes solicitar la actualización o eliminación de tus datos escribiendo a esauortiz014@gmail.com.
+                </p>
               </div>
 
               <button

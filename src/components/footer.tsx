@@ -162,6 +162,15 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-900 dark:border-gray-200 pt-6 sm:pt-8 mt-6">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-6 mb-4">
+            <a href="/politica-de-privacidad" className="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black text-xs transition-colors">
+              Política de Privacidad
+            </a>
+            <span className="hidden sm:inline text-gray-700 dark:text-gray-400">|</span>
+            <a href="/terminos-y-condiciones" className="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black text-xs transition-colors">
+              Términos y Condiciones
+            </a>
+          </div>
           <p className="text-gray-300 dark:text-gray-800 text-center text-xs sm:text-sm font-medium">
             © 2026 David Ortiz. Todos los derechos reservados.
           </p>
