@@ -4,6 +4,7 @@ import React from "react";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { PageWrapper } from "@/components/page-wrapper";
+import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/google-tag-manager";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -122,12 +123,14 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <head>
+        <GoogleTagManagerHead />
         <link rel="alternate" type="text/plain" href="/llms.txt" />
         <JsonLd />
       </head>
       <body
         className={`${inter.className} bg-white dark:bg-black text-black dark:text-white transition-colors duration-300`}
       >
+        <GoogleTagManagerBody />
         <a
           href="#inicio"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-semibold"
