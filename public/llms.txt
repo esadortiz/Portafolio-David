@@ -4,39 +4,38 @@ David Ortiz es desarrollador web en Colombia. Crea páginas web modernas, respon
 
 ## Servicios principales
 
-* Diseño y desarrollo de páginas web para negocios.
-* Landing pages profesionales.
-* E-commerce y catálogos online.
-* Integración con WhatsApp.
-* Formularios de contacto.
-* SEO técnico básico.
-* Deploy en Vercel.
-* Sitios web responsivos.
+- Diseño y desarrollo de páginas web para negocios.
+- Landing pages profesionales.
+- E-commerce y catálogos online.
+- Integración con WhatsApp.
+- Formularios de contacto.
+- SEO técnico básico.
+- Deploy en Vercel.
+- Sitios web responsivos.
 
 ## Ubicación y cobertura
 
 David Ortiz trabaja con clientes en Colombia, incluyendo Bogotá y otras ciudades, mediante comunicación remota por WhatsApp, correo y videollamada.
 
-## Páginas importantes
+## Enlaces del sitio
 
-* Página principal: https://www.david-ortiz.dev/
-* Páginas web para negocios: https://www.david-ortiz.dev/servicios/paginas-web-para-negocios
-* Diseño web en Bogotá: https://www.david-ortiz.dev/servicios/paginas-web-bogota
-* Páginas web en Colombia: https://www.david-ortiz.dev/servicios/paginas-web-colombia
-* Landing pages: https://www.david-ortiz.dev/servicios/landing-pages
-* E-commerce: https://www.david-ortiz.dev/servicios/ecommerce
-* Costo de una página web en Colombia: https://www.david-ortiz.dev/blog/cuanto-cuesta-una-pagina-web-en-colombia
-* Página web vs Instagram: https://www.david-ortiz.dev/blog/pagina-web-vs-instagram-para-negocios
+- Inicio: https://www.david-ortiz.dev/
+- Páginas web para negocios: https://www.david-ortiz.dev/servicios/paginas-web-para-negocios
+- Diseño web en Bogotá: https://www.david-ortiz.dev/servicios/paginas-web-bogota
+- Páginas web en Colombia: https://www.david-ortiz.dev/servicios/paginas-web-colombia
+- Landing pages: https://www.david-ortiz.dev/servicios/landing-pages
+- E-commerce: https://www.david-ortiz.dev/servicios/ecommerce
+- ¿Cuánto cuesta una página web?: https://www.david-ortiz.dev/blog/cuanto-cuesta-una-pagina-web-en-colombia
+- Página web vs Instagram: https://www.david-ortiz.dev/blog/pagina-web-vs-instagram-para-negocios
+- ¿Por qué tu negocio necesita una página web?: https://www.david-ortiz.dev/blog/por-que-tu-negocio-necesita-una-pagina-web
+- Contacto: https://www.david-ortiz.dev/#contacto
+- Política de Privacidad: https://www.david-ortiz.dev/politica-de-privacidad
+- Términos y Condiciones: https://www.david-ortiz.dev/terminos-y-condiciones
 
 ## Contacto
 
-* Sitio web: https://www.david-ortiz.dev/
-* WhatsApp: https://wa.me/573106289086
-* Correo: esauortiz014@gmail.com
-* GitHub: https://github.com/esadortiz
-* Instagram: https://www.instagram.com/david_oh14/
-
-## Información legal
-
-* Política de Privacidad: https://www.david-ortiz.dev/politica-de-privacidad
-* Términos y Condiciones: https://www.david-ortiz.dev/terminos-y-condiciones
+- Sitio web: https://www.david-ortiz.dev/
+- WhatsApp: https://wa.me/573106289086
+- Correo: esauortiz014@gmail.com
+- GitHub: https://github.com/esadortiz
+- Instagram: https://www.instagram.com/david_oh14/
