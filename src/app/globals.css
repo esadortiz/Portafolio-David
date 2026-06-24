@@ -10,7 +10,6 @@
 
 html {
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -72,6 +71,10 @@ body {
   opacity: 0;
 }
 
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0) rotate(0deg);
@@ -81,35 +84,6 @@ body {
     transform: translateY(-20px) rotate(10deg);
     opacity: 0.5;
   }
-}
-
-.animate-float {
-  animation: float infinite ease-in-out;
-}
-
-@keyframes dots {
-  0%, 20% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-.animate-shimmer {
-  animation: shimmer 2s infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

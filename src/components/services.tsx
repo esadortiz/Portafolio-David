@@ -120,14 +120,10 @@ export function Services() {
       }`}
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div className="absolute top-20 left-10 w-2 h-32 bg-gray-400/10 dark:bg-gray-100/10 rounded-full animate-float" style={{ animationDelay: "0s", animationDuration: "3s" }} />
+        <div className="absolute top-20 left-10 w-2 h-32 bg-gray-400/10 dark:bg-gray-100/10 rounded-full animate-float" style={{ animationDuration: "3s" }} />
         <div className="absolute top-40 right-20 w-1 h-24 bg-gray-400/10 dark:bg-gray-100/10 rounded-full animate-float" style={{ animationDelay: "1s", animationDuration: "4s" }} />
         <div className="absolute bottom-40 left-1/4 w-2 h-40 bg-gray-400/10 dark:bg-gray-100/10 rounded-full animate-float" style={{ animationDelay: "2s", animationDuration: "3.5s" }} />
-        <div className="absolute top-1/3 right-1/3 w-1 h-20 bg-gray-400/10 dark:bg-gray-100/10 rounded-full animate-float" style={{ animationDelay: "0.5s", animationDuration: "4.5s" }} />
-        <div className="absolute bottom-20 right-1/4 w-2 h-28 bg-gray-400/10 dark:bg-gray-100/10 rounded-full animate-float" style={{ animationDelay: "1.5s", animationDuration: "3s" }} />
-        <div className="absolute top-1/2 left-1/3 w-1 h-36 bg-gray-400/10 dark:bg-gray-100/10 rounded-full animate-float" style={{ animationDelay: "2.5s", animationDuration: "4s" }} />
-        <div className="absolute bottom-1/3 right-10 w-2 h-32 bg-gray-400/10 dark:bg-gray-100/10 rounded-full animate-float" style={{ animationDelay: "0.8s", animationDuration: "3.5s" }} />
-        <div className="absolute top-20 right-1/2 w-1 h-24 bg-gray-400/10 dark:bg-gray-100/10 rounded-full animate-float" style={{ animationDelay: "1.8s", animationDuration: "4s" }} />
+        <div className="absolute bottom-20 right-1/4 w-1 h-28 bg-gray-400/10 dark:bg-gray-100/10 rounded-full animate-float" style={{ animationDelay: "1.5s", animationDuration: "3s" }} />
       </div>
 
       <div className="max-w-7xl w-full relative z-10">

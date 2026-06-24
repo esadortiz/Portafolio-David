@@ -123,6 +123,8 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <GoogleTagManagerHead />
         <link rel="alternate" type="text/plain" href="/llms.txt" />
         <JsonLd />

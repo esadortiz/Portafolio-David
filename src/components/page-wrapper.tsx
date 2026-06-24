@@ -12,16 +12,16 @@ export function PageWrapper({ children }: PageWrapperProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
 
     const timer = setTimeout(() => {
       setIsLoading(false);
-      document.body.style.overflow = "auto";
-    }, 2000);
+      document.body.style.overflow = "";
+    }, 1200);
 
     return () => {
       clearTimeout(timer);
-      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "";
     };
   }, []);
 
