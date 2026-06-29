@@ -195,6 +195,14 @@ export function Services() {
           </div>
         </div>
 
+        <div className="flex justify-center mt-8 gap-4 text-sm text-gray-500 dark:text-gray-400">
+          <a href="/servicios/paginas-web-para-negocios" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Páginas web para negocios</a>
+          <a href="/servicios/landing-pages" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Landing pages</a>
+          <a href="/servicios/ecommerce" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">E-commerce</a>
+          <a href="/servicios/paginas-web-bogota" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Páginas web en Bogotá</a>
+          <a href="/servicios/paginas-web-colombia" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Páginas web en Colombia</a>
+        </div>
+
         <div className="flex justify-center mt-12 sm:mt-16 animate-fade-up" style={{ animationDelay: "0.5s" }}>
           <a
             href="https://wa.me/573106289086?text=Hola%20David%2C%20quiero%20informaci%C3%B3n%20para%20crear%20una%20p%C3%A1gina%20web%20para%20mi%20negocio."

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { serviceSchema, breadcrumbSchema } from "@/lib/schema";
 
 const SITE_URL = "https://www.david-ortiz.dev";
+const PAGE_URL = `${SITE_URL}/servicios/ecommerce`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -16,20 +18,39 @@ export const metadata: Metadata = {
     "catálogo con WhatsApp",
   ],
   alternates: {
-    canonical: `${SITE_URL}/servicios/ecommerce`,
+    canonical: PAGE_URL,
   },
   openGraph: {
     title: "E-commerce y catálogos online para negocios | David Ortiz",
     description:
       "Tiendas online y catálogos digitales para negocios que quieren vender o mostrar productos por internet.",
-    url: `${SITE_URL}/servicios/ecommerce`,
+    url: PAGE_URL,
     siteName: "David Ortiz",
+    images: [{ url: `${SITE_URL}/icon.png`, width: 512, height: 512, alt: "E-commerce por David Ortiz" }],
   },
 };
 
 export default function EcommercePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            serviceSchema({
+              pageUrl: PAGE_URL,
+              serviceName: "E-commerce y catálogos online",
+              description:
+                "Tiendas online y catálogos digitales para negocios que quieren vender o mostrar productos en internet en Colombia.",
+            }),
+            breadcrumbSchema([
+              { name: "Inicio", url: SITE_URL },
+              { name: "Servicios", url: `${SITE_URL}/#servicios` },
+              { name: "E-commerce", url: PAGE_URL },
+            ]),
+          ]),
+        }}
+      />
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
         Tiendas online y catálogos digitales para vender en internet
       </h1>
@@ -104,6 +125,16 @@ export default function EcommercePage() {
           <h3 className="font-semibold text-gray-900 dark:text-white mb-1">¿Cuántos productos puedo mostrar?</h3>
           <p className="text-gray-600 dark:text-gray-300">Desde unos pocos productos hasta catálogos más grandes. Conversemos sobre el tamaño de tu catálogo para recomendarte la mejor opción.</p>
         </div>
+      </div>
+      <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-500 dark:text-gray-400 space-y-2">
+        <p>Soy <strong className="text-gray-700 dark:text-gray-300">David Ortiz</strong>, desarrollador web en Colombia. Creo tiendas online y catálogos digitales para vender por internet.</p>
+        <p>
+          <a href="/servicios/paginas-web-para-negocios" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Páginas web para negocios</a>
+          {" · "}
+          <a href="/servicios/landing-pages" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Landing pages</a>
+          {" · "}
+          <a href="/#contacto" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Solicitar cotización</a>
+        </p>
       </div>
     </>
   );

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { blogPostingSchema, breadcrumbSchema } from "@/lib/schema";
 
 const SITE_URL = "https://www.david-ortiz.dev";
+const PAGE_URL = `${SITE_URL}/blog/cuanto-cuesta-una-pagina-web-en-colombia`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -16,21 +18,42 @@ export const metadata: Metadata = {
     "presupuesto página web negocio",
   ],
   alternates: {
-    canonical: `${SITE_URL}/blog/cuanto-cuesta-una-pagina-web-en-colombia`,
+    canonical: PAGE_URL,
   },
   openGraph: {
     title: "Cuánto cuesta una página web en Colombia | Guía para negocios",
     description:
       "Guía completa sobre los factores que determinan el precio de una página web en Colombia. Información útil para negocios y emprendedores.",
-    url: `${SITE_URL}/blog/cuanto-cuesta-una-pagina-web-en-colombia`,
+    url: PAGE_URL,
     siteName: "David Ortiz",
     type: "article",
+    images: [{ url: `${SITE_URL}/icon.png`, width: 512, height: 512, alt: "Costo de página web en Colombia - David Ortiz" }],
   },
 };
 
 export default function CuantoCuestaPaginaWebPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            blogPostingSchema({
+              pageUrl: PAGE_URL,
+              headline: "¿Cuánto cuesta crear una página web en Colombia?",
+              description:
+                "Guía para negocios sobre los factores que determinan el precio de una página web en Colombia: tipo de sitio, diseño, funcionalidades, dominio y mantenimiento.",
+              imageUrl: `${SITE_URL}/icon.png`,
+              datePublished: "2026-06-07",
+            }),
+            breadcrumbSchema([
+              { name: "Inicio", url: SITE_URL },
+              { name: "Blog", url: `${SITE_URL}/blog/cuanto-cuesta-una-pagina-web-en-colombia` },
+              { name: "¿Cuánto cuesta crear una página web en Colombia?", url: PAGE_URL },
+            ]),
+          ]),
+        }}
+      />
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
         ¿Cuánto cuesta crear una página web en Colombia?
       </h1>
@@ -104,6 +127,17 @@ export default function CuantoCuestaPaginaWebPage() {
           <h3 className="font-semibold text-gray-900 dark:text-white mb-1">¿Cómo puedo recibir una cotización?</h3>
           <p className="text-gray-600 dark:text-gray-300">Escríbeme por WhatsApp al 310 628 9086, cuéntame sobre tu negocio y lo que necesitas. Te responderé con información detallada sin compromiso.</p>
         </div>
+      </div>
+
+      <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-500 dark:text-gray-400 space-y-2">
+        <p>Artículo escrito por <strong className="text-gray-700 dark:text-gray-300">David Ortiz</strong>, desarrollador web en Colombia. Ayudo a negocios a tener presencia profesional en internet.</p>
+        <p>
+          <a href="/servicios/paginas-web-para-negocios" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Páginas web para negocios</a>
+          {" · "}
+          <a href="/blog/por-que-tu-negocio-necesita-una-pagina-web" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">¿Por qué necesitas una página web?</a>
+          {" · "}
+          <a href="/#contacto" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Solicitar cotización</a>
+        </p>
       </div>
     </>
   );

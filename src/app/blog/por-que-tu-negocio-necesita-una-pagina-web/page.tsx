@@ -1,35 +1,58 @@
 import type { Metadata } from "next";
+import { blogPostingSchema, breadcrumbSchema } from "@/lib/schema";
 
 const SITE_URL = "https://www.david-ortiz.dev";
+const PAGE_URL = `${SITE_URL}/blog/por-que-tu-negocio-necesita-una-pagina-web`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Por qué tu negocio necesita una página web | David Ortiz",
   description:
-    "Descubre por qué tu negocio debería tener una página web profesional: confianza, presencia en Google, contacto directo con clientes y diferenciación de la competencia.",
+    "Descubre las razones clave por las que tu negocio necesita una página web profesional: generar confianza, aparecer en Google y recibir más clientes.",
   keywords: [
-    "por qué necesito una página web",
-    "beneficios de tener página web",
-    "ventajas sitio web para negocios",
-    "importancia página web negocio",
-    "presencia digital para emprendedores",
+    "por qué tener página web",
+    "necesito página web para mi negocio",
+    "ventajas de tener página web",
+    "página web vs redes sociales",
+    "presencia digital para negocios",
   ],
   alternates: {
-    canonical: `${SITE_URL}/blog/por-que-tu-negocio-necesita-una-pagina-web`,
+    canonical: PAGE_URL,
   },
   openGraph: {
     title: "Por qué tu negocio necesita una página web | David Ortiz",
     description:
-      "Descubre los beneficios de tener una página web profesional: confianza, clientes desde Google y contacto directo.",
-    url: `${SITE_URL}/blog/por-que-tu-negocio-necesita-una-pagina-web`,
+      "Descubre por qué una página web profesional es la mejor inversión para tu negocio. Genera confianza, aparece en Google y recibe más clientes.",
+    url: PAGE_URL,
     siteName: "David Ortiz",
     type: "article",
+    images: [{ url: `${SITE_URL}/icon.png`, width: 512, height: 512, alt: "Por qué necesitas una página web - David Ortiz" }],
   },
 };
 
 export default function PorQueTuNegocioNecesitaPaginaWebPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            blogPostingSchema({
+              pageUrl: PAGE_URL,
+              headline: "¿Por qué tu negocio necesita una página web?",
+              description:
+                "Descubre las razones clave por las que tu negocio necesita una página web profesional: confianza, Google, organización y contacto directo con clientes.",
+              imageUrl: `${SITE_URL}/icon.png`,
+              datePublished: "2026-06-07",
+            }),
+            breadcrumbSchema([
+              { name: "Inicio", url: SITE_URL },
+              { name: "Blog", url: `${SITE_URL}/blog/por-que-tu-negocio-necesita-una-pagina-web` },
+              { name: "¿Por qué tu negocio necesita una página web?", url: PAGE_URL },
+            ]),
+          ]),
+        }}
+      />
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
         ¿Por qué tu negocio necesita una página web?
       </h1>
@@ -99,6 +122,17 @@ export default function PorQueTuNegocioNecesitaPaginaWebPage() {
           <h3 className="font-semibold text-gray-900 dark:text-white mb-1">¿Vale la pena la inversión?</h3>
           <p className="text-gray-600 dark:text-gray-300">Un solo cliente que llegue por tu página web puede justificar la inversión. Y la página sigue trabajando para ti todos los días, incluso cuando no estás atendiendo.</p>
         </div>
+      </div>
+
+      <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-500 dark:text-gray-400 space-y-2">
+        <p>Artículo escrito por <strong className="text-gray-700 dark:text-gray-300">David Ortiz</strong>, desarrollador web en Colombia. Creo páginas web profesionales para negocios y emprendedores.</p>
+        <p>
+          <a href="/blog/cuanto-cuesta-una-pagina-web-en-colombia" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">¿Cuánto cuesta una página web?</a>
+          {" · "}
+          <a href="/servicios/paginas-web-para-negocios" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Páginas web para negocios</a>
+          {" · "}
+          <a href="/#contacto" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Contacto</a>
+        </p>
       </div>
     </>
   );

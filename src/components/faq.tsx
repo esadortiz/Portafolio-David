@@ -26,6 +26,8 @@ const faqs = [
   },
 ];
 
+import { faqPageSchema } from "@/lib/schema";
+
 export function Faq() {
   return (
     <section
@@ -33,6 +35,10 @@ export function Faq() {
       aria-label="Preguntas frecuentes"
       className="py-20 px-4 sm:px-6 bg-white dark:bg-black"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(faqs)) }}
+      />
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">

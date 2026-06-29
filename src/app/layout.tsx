@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { PageWrapper } from "@/components/page-wrapper";
 import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/google-tag-manager";
+import { siteSchemas } from "@/lib/schema";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -79,40 +80,17 @@ export const metadata: Metadata = {
 };
 
 function JsonLd() {
-  const schema = {
+  const s = siteSchemas();
+
+  const combined = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "David Ortiz",
-    jobTitle: "Desarrollador Web",
-    url: SITE_URL,
-    image: `${SITE_URL}/About.me.png`,
-    logo: `${SITE_URL}/icon.png`,
-    email: "esauortiz014@gmail.com",
-    telephone: "+573106289086",
-    address: {
-      "@type": "Country",
-      name: "Colombia",
-    },
-    areaServed: "Colombia",
-    knowsAbout: [
-      "Desarrollo web",
-      "Landing pages",
-      "Diseño web responsive",
-      "SEO básico",
-      "Formularios de contacto",
-      "Integración con WhatsApp",
-    ],
-    sameAs: [
-      "https://github.com/esadortiz",
-      "https://wa.me/573106289086",
-      "https://www.instagram.com/david_oh14/",
-    ],
+    "@graph": [s.professionalService, s.person, s.webSite],
   };
 
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(combined) }}
     />
   );
 }

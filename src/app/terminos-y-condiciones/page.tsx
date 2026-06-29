@@ -7,8 +7,23 @@ export const metadata: Metadata = {
   title: "Términos y Condiciones | David Ortiz",
   description:
     "Términos y Condiciones del sitio web de David Ortiz, desarrollador web en Colombia. Información sobre el uso del sitio, servicios, propiedad intelectual y limitación de responsabilidad.",
+  keywords: [
+    "términos y condiciones",
+    "condiciones de uso",
+    "términos legales Colombia",
+    "uso del sitio web",
+    "propiedad intelectual",
+  ],
   alternates: {
     canonical: `${SITE_URL}/terminos-y-condiciones`,
+  },
+  openGraph: {
+    title: "Términos y Condiciones | David Ortiz",
+    description:
+      "Términos y Condiciones del sitio web de David Ortiz. Uso del sitio, servicios, propiedad intelectual y legislación aplicable.",
+    url: `${SITE_URL}/terminos-y-condiciones`,
+    siteName: "David Ortiz",
+    images: [{ url: `${SITE_URL}/icon.png`, width: 512, height: 512, alt: "Términos y Condiciones - David Ortiz" }],
   },
   robots: {
     index: true,

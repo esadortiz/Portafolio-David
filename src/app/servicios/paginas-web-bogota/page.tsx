@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { serviceSchema, breadcrumbSchema } from "@/lib/schema";
 
 const SITE_URL = "https://www.david-ortiz.dev";
+const PAGE_URL = `${SITE_URL}/servicios/paginas-web-bogota`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -17,20 +19,39 @@ export const metadata: Metadata = {
     "diseñador web Bogotá Colombia",
   ],
   alternates: {
-    canonical: `${SITE_URL}/servicios/paginas-web-bogota`,
+    canonical: PAGE_URL,
   },
   openGraph: {
     title: "Diseño de páginas web en Bogotá | David Ortiz",
     description:
       "Creo páginas web profesionales en Bogotá para negocios que quieren mejorar su presencia digital y recibir clientes.",
-    url: `${SITE_URL}/servicios/paginas-web-bogota`,
+    url: PAGE_URL,
     siteName: "David Ortiz",
+    images: [{ url: `${SITE_URL}/icon.png`, width: 512, height: 512, alt: "Diseño web en Bogotá por David Ortiz" }],
   },
 };
 
 export default function PaginasWebBogotaPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            serviceSchema({
+              pageUrl: PAGE_URL,
+              serviceName: "Diseño de páginas web en Bogotá",
+              description:
+                "Diseño páginas web profesionales en Bogotá para negocios, emprendedores y profesionales. Trabajo remoto con comunicación directa.",
+            }),
+            breadcrumbSchema([
+              { name: "Inicio", url: SITE_URL },
+              { name: "Servicios", url: `${SITE_URL}/#servicios` },
+              { name: "Páginas web en Bogotá", url: PAGE_URL },
+            ]),
+          ]),
+        }}
+      />
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
         Diseño de páginas web en Bogotá para negocios y emprendedores
       </h1>
@@ -94,6 +115,16 @@ export default function PaginasWebBogotaPage() {
           <h3 className="font-semibold text-gray-900 dark:text-white mb-1">¿Cuánto cuesta una página web en Bogotá?</h3>
           <p className="text-gray-600 dark:text-gray-300">El precio depende del tipo de página y las funcionalidades que necesites. Escríbeme por WhatsApp y te daré información detallada sin compromiso.</p>
         </div>
+      </div>
+      <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-500 dark:text-gray-400 space-y-2">
+        <p>Soy <strong className="text-gray-700 dark:text-gray-300">David Ortiz</strong>, desarrollador web. Trabajo de forma remota con negocios en Bogotá y toda Colombia.</p>
+        <p>
+          <a href="/servicios/paginas-web-colombia" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Páginas web en Colombia</a>
+          {" · "}
+          <a href="/servicios/paginas-web-para-negocios" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Páginas web para negocios</a>
+          {" · "}
+          <a href="/#contacto" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Contacto</a>
+        </p>
       </div>
     </>
   );

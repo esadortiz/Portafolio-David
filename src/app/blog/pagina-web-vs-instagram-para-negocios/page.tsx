@@ -1,36 +1,59 @@
 import type { Metadata } from "next";
+import { blogPostingSchema, breadcrumbSchema } from "@/lib/schema";
 
 const SITE_URL = "https://www.david-ortiz.dev";
+const PAGE_URL = `${SITE_URL}/blog/pagina-web-vs-instagram-para-negocios`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Página web vs Instagram para negocios | Qué conviene más",
   description:
-    "Comparativa entre tener una página web profesional o usar solo Instagram para tu negocio. Ventajas de cada opción y cuál es la mejor estrategia para atraer clientes.",
+    "Comparativa entre página web profesional e Instagram para negocios. Ventajas, limitaciones y la mejor estrategia para combinar ambas herramientas.",
   keywords: [
     "página web vs Instagram",
+    "Instagram o página web para negocio",
     "qué es mejor para mi negocio",
-    "Instagram o sitio web",
-    "redes sociales vs página web",
-    "presencia digital negocios",
-    "dónde promocionar mi negocio",
+    "tener página web o solo Instagram",
+    "comparativa página web y redes sociales",
+    "marketing digital para negocios",
   ],
   alternates: {
-    canonical: `${SITE_URL}/blog/pagina-web-vs-instagram-para-negocios`,
+    canonical: PAGE_URL,
   },
   openGraph: {
     title: "Página web vs Instagram para negocios | Qué conviene más",
     description:
-      "¿Página web o Instagram? Conoce las ventajas de cada opción y descubre cuál es la mejor estrategia para tu negocio.",
-    url: `${SITE_URL}/blog/pagina-web-vs-instagram-para-negocios`,
+      "Comparativa completa entre tener página web profesional o usar solo Instagram para tu negocio. Ventajas, desventajas y recomendación final.",
+    url: PAGE_URL,
     siteName: "David Ortiz",
     type: "article",
+    images: [{ url: `${SITE_URL}/icon.png`, width: 512, height: 512, alt: "Página web vs Instagram - David Ortiz" }],
   },
 };
 
 export default function PaginaWebVsInstagramPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            blogPostingSchema({
+              pageUrl: PAGE_URL,
+              headline: "Página web o Instagram: ¿qué necesita realmente tu negocio?",
+              description:
+                "Comparativa entre tener una página web profesional o usar solo Instagram. Ventajas, limitaciones y la mejor estrategia para negocios en Colombia.",
+              imageUrl: `${SITE_URL}/icon.png`,
+              datePublished: "2026-06-07",
+            }),
+            breadcrumbSchema([
+              { name: "Inicio", url: SITE_URL },
+              { name: "Blog", url: `${SITE_URL}/blog/pagina-web-vs-instagram-para-negocios` },
+              { name: "Página web vs Instagram", url: PAGE_URL },
+            ]),
+          ]),
+        }}
+      />
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
         Página web o Instagram: ¿qué necesita realmente tu negocio?
       </h1>
@@ -102,6 +125,17 @@ export default function PaginaWebVsInstagramPage() {
           <h3 className="font-semibold text-gray-900 dark:text-white mb-1">¿Qué hago si ya tengo muchos seguidores en Instagram?</h3>
           <p className="text-gray-600 dark:text-gray-300">Eso es una ventaja. Una página web complementa tu presencia en redes. Tus seguidores de Instagram pueden visitar tu sitio para más información y terminar contactándote.</p>
         </div>
+      </div>
+
+      <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-500 dark:text-gray-400 space-y-2">
+        <p>Artículo escrito por <strong className="text-gray-700 dark:text-gray-300">David Ortiz</strong>, desarrollador web en Colombia. Ayudo a negocios a combinar presencia digital profesional con redes sociales.</p>
+        <p>
+          <a href="/blog/por-que-tu-negocio-necesita-una-pagina-web" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">¿Por qué necesitas una página web?</a>
+          {" · "}
+          <a href="/servicios/paginas-web-para-negocios" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Páginas web para negocios</a>
+          {" · "}
+          <a href="/#contacto" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Contacto</a>
+        </p>
       </div>
     </>
   );

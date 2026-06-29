@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { serviceSchema, breadcrumbSchema } from "@/lib/schema";
 
 const SITE_URL = "https://www.david-ortiz.dev";
+const PAGE_URL = `${SITE_URL}/servicios/paginas-web-colombia`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -16,20 +18,39 @@ export const metadata: Metadata = {
     "sitios web profesionales Colombia",
   ],
   alternates: {
-    canonical: `${SITE_URL}/servicios/paginas-web-colombia`,
+    canonical: PAGE_URL,
   },
   openGraph: {
     title: "Páginas web para negocios en Colombia | David Ortiz",
     description:
       "Creo páginas web profesionales para negocios en toda Colombia. Desarrollo remoto con comunicación fluida por WhatsApp.",
-    url: `${SITE_URL}/servicios/paginas-web-colombia`,
+    url: PAGE_URL,
     siteName: "David Ortiz",
+    images: [{ url: `${SITE_URL}/icon.png`, width: 512, height: 512, alt: "Páginas web en Colombia por David Ortiz" }],
   },
 };
 
 export default function PaginasWebColombiaPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            serviceSchema({
+              pageUrl: PAGE_URL,
+              serviceName: "Creación de páginas web para negocios en Colombia",
+              description:
+                "Creo páginas web profesionales para negocios en toda Colombia. Desarrollo remoto con comunicación por WhatsApp y correo.",
+            }),
+            breadcrumbSchema([
+              { name: "Inicio", url: SITE_URL },
+              { name: "Servicios", url: `${SITE_URL}/#servicios` },
+              { name: "Páginas web en Colombia", url: PAGE_URL },
+            ]),
+          ]),
+        }}
+      />
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
         Creación de páginas web para negocios en Colombia
       </h1>
@@ -120,6 +141,16 @@ export default function PaginasWebColombiaPage() {
           <h3 className="font-semibold text-gray-900 dark:text-white mb-1">¿Ofreces mantenimiento después de publicar la página?</h3>
           <p className="text-gray-600 dark:text-gray-300">Sí. Podemos coordinar actualizaciones cuando necesites modificar información, agregar secciones o hacer cambios en tu página.</p>
         </div>
+      </div>
+      <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-500 dark:text-gray-400 space-y-2">
+        <p>Soy <strong className="text-gray-700 dark:text-gray-300">David Ortiz</strong>, desarrollador web. Trabajo con clientes en toda Colombia mediante comunicación remota.</p>
+        <p>
+          <a href="/servicios/paginas-web-para-negocios" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Páginas web para negocios</a>
+          {" · "}
+          <a href="/servicios/landing-pages" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Landing pages</a>
+          {" · "}
+          <a href="/#contacto" className="underline hover:text-gray-900 dark:hover:text-white transition-colors">Contacto</a>
+        </p>
       </div>
     </>
   );

@@ -7,8 +7,23 @@ export const metadata: Metadata = {
   title: "Política de Privacidad | David Ortiz",
   description:
     "Política de Privacidad y Tratamiento de Datos Personales de David Ortiz, desarrollador web en Colombia. Conoce cómo se recopilan, usan y protegen tus datos personales.",
+  keywords: [
+    "política de privacidad",
+    "tratamiento de datos personales",
+    "ley 1581 de 2012",
+    "habeas data Colombia",
+    "protección de datos",
+  ],
   alternates: {
     canonical: `${SITE_URL}/politica-de-privacidad`,
+  },
+  openGraph: {
+    title: "Política de Privacidad | David Ortiz",
+    description:
+      "Política de Privacidad y Tratamiento de Datos Personales. Conoce cómo se protegen tus datos.",
+    url: `${SITE_URL}/politica-de-privacidad`,
+    siteName: "David Ortiz",
+    images: [{ url: `${SITE_URL}/icon.png`, width: 512, height: 512, alt: "Política de Privacidad - David Ortiz" }],
   },
   robots: {
     index: true,
