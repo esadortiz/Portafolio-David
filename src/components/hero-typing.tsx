@@ -46,8 +46,8 @@ export function HeroTyping() {
   return (
     <div className="relative animate-fade-up-delay-200 flex justify-center">
       <div
-        className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-mono font-bold text-gray-900 dark:text-white bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm transition-opacity duration-300 inline-block min-h-[1.75rem] sm:min-h-[2rem] md:min-h-[2.25rem] lg:min-h-[2.5rem] min-w-[8ch]"
-        style={{ opacity }}
+        className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-mono font-bold text-gray-900 dark:text-white bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm inline-block min-h-[1.75rem] sm:min-h-[2rem] md:min-h-[2.25rem] lg:min-h-[2.5rem]"
+        style={{ opacity, minWidth: "20ch" }}
       >
         {displayedText}
         <span className="animate-pulse text-blue-600" aria-hidden="true">|</span>

@@ -36,6 +36,15 @@ body {
   }
 }
 
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
 .animate-fade-up {
   animation: fadeUp 0.8s ease-out forwards;
   opacity: 0;
