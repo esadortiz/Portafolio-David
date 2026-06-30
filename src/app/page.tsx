@@ -1,8 +1,8 @@
 import dynamic from "next/dynamic";
 import { Hero } from "@/components/hero";
-import About from "@/components/about";
 import { Footer } from "@/components/footer";
 
+const About = dynamic(() => import("@/components/about"), { ssr: true });
 const Trajectory = dynamic(
   () => import("@/components/trajectory").then((m) => m.Trajectory),
   { ssr: true }

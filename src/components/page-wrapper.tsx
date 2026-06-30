@@ -18,7 +18,7 @@ export function PageWrapper({ children }: PageWrapperProps) {
     const timer = setTimeout(() => {
       setIsLoading(false);
       document.documentElement.style.overflow = previousOverflow;
-    }, 1200);
+    }, 300);
 
     return () => {
       clearTimeout(timer);
