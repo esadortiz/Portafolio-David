@@ -12,7 +12,6 @@ export function siteSchemas() {
     sameAs: [
       "https://github.com/esadortiz",
       "https://wa.me/573106289086",
-      "https://www.instagram.com/david_oh14/",
     ],
     description:
       "Desarrollador web en Colombia especializado en páginas web para negocios, landing pages profesionales y e-commerce.",
@@ -61,7 +60,6 @@ export function siteSchemas() {
     sameAs: [
       "https://github.com/esadortiz",
       "https://wa.me/573106289086",
-      "https://www.instagram.com/david_oh14/",
     ],
   };
 

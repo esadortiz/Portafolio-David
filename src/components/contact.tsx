@@ -11,6 +11,7 @@ export function Contact() {
   const [telefono, setTelefono] = useState("");
   const [servicio, setServicio] = useState("");
   const [mensaje, setMensaje] = useState("");
+  const [hp, setHp] = useState("");
 
   const [autorizacionDatos, setAutorizacionDatos] = useState(false);
   const [comunicaciones, setComunicaciones] = useState(false);
@@ -59,6 +60,7 @@ export function Contact() {
           telefono: telefono.trim(),
           servicio: servicio.trim(),
           mensaje: mensaje.trim(),
+          _hp: hp,
           autorizacionDatos: true,
           comunicaciones,
         }),
@@ -116,6 +118,18 @@ export function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
           <div className="lg:col-span-3">
             <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+              <div aria-hidden="true" className="absolute left-[-9999px] top-0 opacity-0 h-0 overflow-hidden">
+                <label htmlFor="_hp">No llenar</label>
+                <input
+                  id="_hp"
+                  name="_hp"
+                  type="text"
+                  value={hp}
+                  onChange={(e) => setHp(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
